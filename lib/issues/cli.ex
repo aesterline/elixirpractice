@@ -26,11 +26,12 @@ defmodule Issues.CLI do
     IO.puts "usage: issues <user> <project> [ count | #{@default_count} ]"
   end
 
-  def process({user, project, _count}) do
-    Issues.GethubIssues.fetch(user, project)
+  def process({user, project, count}) do
+    Issues.GithubIssues.fetch(user, project)
       |> decode_response
       |> convert_to_list_of_hashdicts
       |> sort_into_ascending_order
+      |> Enum.take(count)
   end
 
   def decode_response({:ok, body}), do: Jsonex.decode(body)
