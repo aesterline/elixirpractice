@@ -23,7 +23,8 @@ defmodule Issues.Mixfile do
   # { :barbat, "~> 0.1", github: "elixir-lang/barbat" }
   defp deps do
     [
-     { :httpotion, github: "myfreeweb/httpotion" }
+     { :httpotion, github: "myfreeweb/httpotion" },
+     { :jsonex, "2.0.1", github: "marcelog/jsonex" }
     ]
   end
 end
