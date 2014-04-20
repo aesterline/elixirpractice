@@ -37,7 +37,7 @@ defmodule Issues.CLI do
       |> print_table_for_columns(["number", "created_at", "title"])
   end
 
-  def decode_response({:ok, body}), do: Jsonex.decode(body)
+  def decode_response({:ok, body}), do: :jsx.decode(body)
   def decode_response({:error, msg}) do
     error = :jsx.decode(msg)["message"]
     IO.puts "Error fetching from Github: #{error}"
