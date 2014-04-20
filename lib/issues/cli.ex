@@ -39,7 +39,7 @@ defmodule Issues.CLI do
 
   def decode_response({:ok, body}), do: Jsonex.decode(body)
   def decode_response({:error, msg}) do
-    error = Jsonex.decode(msg)["message"]
+    error = :jsx.decode(msg)["message"]
     IO.puts "Error fetching from Github: #{error}"
     System.halt(2)
   end

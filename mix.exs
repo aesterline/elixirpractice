@@ -25,7 +25,7 @@ defmodule Issues.Mixfile do
   defp deps do
     [
      { :httpotion, github: "myfreeweb/httpotion" },
-     { :jsonex, "2.0.1", github: "marcelog/jsonex" }
+     { :jsx, github: "talentdeficit/jsx" }
     ]
   end
 end
