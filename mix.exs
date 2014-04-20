@@ -25,7 +25,7 @@ defmodule Issues.Mixfile do
   defp deps do
     [
      { :httpotion, github: "myfreeweb/httpotion" },
-     { :jsx, github: "talentdeficit/jsx" }
+     { :json, github: "cblage/elixir-json"}
     ]
   end
 end
